@@ -8,6 +8,7 @@ import cucumber.api.java.ru.Тогда;
 import java.util.List;
 
 public class MyStepsDef {
+    private Game game;
     @Дано("^При игре в Поле чудес даются на выбор буквы$")
     public void при_игре_в_Поле_чудес_даются_на_выбор_буквы(List<String> arg1) {
         // Write code here that turns the phrase above into concrete actions
@@ -16,7 +17,8 @@ public class MyStepsDef {
         // E,K,V must be a scalar (String, Integer, Date, enum etc).
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
-        throw new PendingException();
+        //throw new PendingException();
+        this.game = new Game();
     }
 
     @Когда("^пользователь выбрал букву \"([^\"]*)\"$")
