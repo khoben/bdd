@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src//main//resources//features"},
-        glue = "com.khoben.bdd"
+        glue = "com.khoben.bdd.tests"
 )
 public class CucuRunner {
 }
