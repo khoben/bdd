@@ -27,7 +27,7 @@ public class MyStepsDef {
         // your feature file (except for spaces and capitalization).
         //throw new PendingException();
         this.game = new Game();
-        this.avLetters = new ArrayList<>(arg1);
+        this.game.setAvLetters(arg1);
     }
 
     @Когда("^пользователь выбрал букву \"([^\"]*)\"$")
@@ -46,8 +46,8 @@ public class MyStepsDef {
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
 //        throw new PendingException();
-        avLetters.remove(selectedLetter);
-        assertTrue(CollectionUtils.isEqualCollection(avLetters, arg1));
+        this.game.deleteFromAvLetters(this.selectedLetter);
+        assertTrue(CollectionUtils.isEqualCollection(this.game.getAvLetters(), arg1));
     }
 
     @Дано("^на выбор буквы$")
