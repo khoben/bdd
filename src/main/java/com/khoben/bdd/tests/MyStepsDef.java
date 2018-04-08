@@ -8,13 +8,14 @@ import cucumber.api.java.ru.Тогда;
 import org.junit.Assert;
 import org.apache.commons.collections.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
 public class MyStepsDef {
     private Game game;
-    private List<String> avLetters;
+    private ArrayList<String> avLetters;
     private String selectedLetter;
     @Дано("^При игре в Поле чудес даются на выбор буквы$")
     public void при_игре_в_Поле_чудес_даются_на_выбор_буквы(List<String> arg1) {
@@ -26,7 +27,7 @@ public class MyStepsDef {
         // your feature file (except for spaces and capitalization).
         //throw new PendingException();
         this.game = new Game();
-        this.avLetters = arg1;
+        this.avLetters = new ArrayList<>(arg1);
     }
 
     @Когда("^пользователь выбрал букву \"([^\"]*)\"$")
