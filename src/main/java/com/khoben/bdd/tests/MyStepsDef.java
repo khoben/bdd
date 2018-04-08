@@ -59,11 +59,14 @@ public class MyStepsDef {
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
 //        throw new PendingException();
+        this.game = new Game();
+        this.game.setAvLetters(new ArrayList<>(arg1));
     }
 
     @Тогда("^появляется предупреждение \"([^\"]*)\"$")
     public void появляется_предупреждение(String arg1) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
+        System.out.println(arg1);
     }
 }
