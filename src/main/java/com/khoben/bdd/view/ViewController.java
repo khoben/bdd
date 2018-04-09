@@ -104,6 +104,7 @@ public class ViewController {
 
         if (result.get() == buttonTypeOne){
             game.loadGame();
+            update();
         }else{
             System.exit(0);
         }
