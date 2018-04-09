@@ -8,6 +8,7 @@ import cucumber.api.java.ru.Тогда;
 import org.junit.Assert;
 import org.apache.commons.collections.CollectionUtils;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,5 +69,9 @@ public class MyStepsDef {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
         System.out.println(arg1);
+        JOptionPane.showMessageDialog(null,
+                arg1,
+                "Внимание",
+                JOptionPane.WARNING_MESSAGE);
     }
 }
