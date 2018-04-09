@@ -93,6 +93,6 @@ public class Game {
     }
 
     public void next() {
-
+        curStepCost = scores.get(generateRandomInt(0, scores.size() - 1));
     }
 }
