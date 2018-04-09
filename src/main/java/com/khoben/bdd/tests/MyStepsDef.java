@@ -118,6 +118,8 @@ public class MyStepsDef {
     public void изМассиваСловоОписаниеСоздастсяМассивОбъектовСлов() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         Word expected = new Word("вратарь", "Так в старину называли сторожа городских ворот");
-        Assert.assertNotNull(expected);
+        this.game.loadWordObjects();
+        Word actual = this.game.getWordObjects()[0];
+        Assert.assertEquals(expected, actual);
     }
 }
