@@ -1,5 +1,9 @@
 package com.khoben.bdd.model;
 
+import com.khoben.bdd.controller.Controller;
+import com.khoben.bdd.view.ViewController;
+
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -117,7 +121,23 @@ public class Game {
     }
 
     public int makeTurn(String selectedLetter) {
+        if (!this.curWord.getMask().contains("*")) {
+            ViewController.makeMessageBox(null, "Слово отгадано", "Успех", JOptionPane.WARNING_MESSAGE);
+            return -1;
+        }
+
         selectNewCost();
-        return curStepCost * this.curWord.checkLetter(selectedLetter);
+        deleteFromAvLetters(selectedLetter);
+
+        int score;
+
+        if ((score = this.curWord.checkLetter(selectedLetter))==0){
+            ViewController.makeMessageBox(null, "Такой буквы здесь нет.", ":(", JOptionPane.WARNING_MESSAGE);
+            return -1;
+        }
+
+
+        totalScore += curStepCost * score;
+        return totalScore;
     }
 }
