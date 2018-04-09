@@ -116,6 +116,7 @@ public class MyStepsDef {
     @Тогда("^из массива слово-описание создастся массив объектов слов$")
     public void изМассиваСловоОписаниеСоздастсяМассивОбъектовСлов() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        Word expected = new Word();
+        Assert.assertNotNull(expected);
     }
 }
