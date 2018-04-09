@@ -7,10 +7,12 @@ import java.util.*;
 public class Game {
     private List<String> avLetters;
     private HashMap<String, String> rawWords;
+    private List<Word> words;
 
     public Game(){
         avLetters = new ArrayList<>();
         rawWords = new HashMap<>();
+        words = new ArrayList<>();
     }
     public List<String> getAvLetters() {
         return avLetters;
@@ -58,15 +60,13 @@ public class Game {
     }
 
     public void loadWordObjects() {
-
+        words.clear();
+        for (Map.Entry<String, String> word : rawWords.entrySet()) {
+            words.add(new Word(word.getKey(),word.getValue()));
+        }
     }
 
-    public ArrayList<Word> getWordObjects() {
-        ArrayList<Word> ret = new ArrayList<>(){
-            {
-                add(new Word("вратарь", "Так в старину называли сторожа городских ворот"));
-            }
-        };
-        return ret;
+    public List<Word> getWordObjects() {
+        return words;
     }
 }

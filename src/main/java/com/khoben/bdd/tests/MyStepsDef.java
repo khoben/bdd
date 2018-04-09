@@ -118,8 +118,7 @@ public class MyStepsDef {
     public void изМассиваСловоОписаниеСоздастсяМассивОбъектовСлов() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         Word expected = new Word("вратарь", "Так в старину называли сторожа городских ворот");
-        this.game.loadWordObjects();
-        Word actual = this.game.getWordObjects().get(0);
-        Assert.assertEquals(expected, actual);
+        this.game.loadWordObjects(); //т.к. загрузка из hashmap то порядок не сохраняется
+        Assert.assertTrue(this.game.getWordObjects().contains(expected));
     }
 }
