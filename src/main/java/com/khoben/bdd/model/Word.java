@@ -30,6 +30,11 @@ public class Word {
     }
 
     public void checkLetter(String selectedLetter) {
+        for(int i=0; i<word.length();i++){
+            if (Character.toString(word.charAt(i)).equals(selectedLetter.toLowerCase())){
+                mask.set(i, true);
+            }
+        }
     }
 
     public String getMask() {

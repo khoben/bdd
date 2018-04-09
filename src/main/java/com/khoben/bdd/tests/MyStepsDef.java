@@ -135,6 +135,7 @@ public class MyStepsDef {
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
 //        throw new PendingException();
+        game = new Game();
         this.curWord = new Word(arg1.get(0),arg1.get(1));
     }
 
@@ -149,7 +150,8 @@ public class MyStepsDef {
     public void маска_слова_будет(String arg1) {
         // Write code here that turns the phrase above into concrete actions
         this.curWord.checkLetter(this._selectedLetter);
-        Assert.assertTrue(this.curWord.getMask().equals(arg1));
+//        Assert.assertTrue(this.curWord.getMask().equals(arg1));
+        Assert.assertEquals(this.curWord.getMask(),arg1);
     }
 
     @Тогда("^крутится барабан \\(выбирается кол-во очков на текущий ход\\)$")
