@@ -1,6 +1,8 @@
 package com.khoben.bdd.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class Game {

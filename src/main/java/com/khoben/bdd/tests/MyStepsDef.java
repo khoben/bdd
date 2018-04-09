@@ -107,6 +107,9 @@ public class MyStepsDef {
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
 //        throw new PendingException();
-        assertTrue(CollectionUtils.isEqualCollection(this.game.getRawWords()[0], arg1));
+        ArrayList<String> expectedWord = new ArrayList<>(arg1);
+        String actualDescr  = this.game.getRawWords().get(expectedWord.get(0));
+        String expectedDescr = "Так в старину называли сторожа городских ворот";
+        Assert.assertEquals(expectedDescr, actualDescr);
     }
 }
