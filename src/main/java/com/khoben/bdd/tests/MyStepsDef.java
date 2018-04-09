@@ -69,9 +69,6 @@ public class MyStepsDef {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
         System.out.println(arg1);
-        JOptionPane.showMessageDialog(null,
-                arg1,
-                "Внимание",
-                JOptionPane.WARNING_MESSAGE);
+        ViewController.makeMessageBox(null, arg1, "Внимание",JOptionPane.WARNING_MESSAGE);
     }
 }
