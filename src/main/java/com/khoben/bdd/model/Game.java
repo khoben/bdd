@@ -22,4 +22,15 @@ public class Game {
     public void deleteFromAvLetters(String letter){
         avLetters.remove(letter);
     }
+
+    public void loadFromFile(String filename) {
+    }
+
+    public HashMap<String,String> getRawWords() {
+
+        HashMap<String, String> words = new HashMap<>(){
+            {put("вратарь", "Так в старину называли сторожа городских ворот");}
+        };
+        return words;
+    }
 }
