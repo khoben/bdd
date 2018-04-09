@@ -111,4 +111,12 @@ public class Game {
     public void selectNewCost() {
         curStepCost = scores.get(generateRandomInt(0, scores.size() - 1));
     }
+
+    public void setCurWord(Word curWord) {
+        this.curWord = curWord;
+    }
+
+    public int makeTurn(String selectedLetter) {
+        return 3 * this.curWord.checkLetter(selectedLetter);
+    }
 }

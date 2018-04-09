@@ -29,12 +29,15 @@ public class Word {
             return false;
     }
 
-    public void checkLetter(String selectedLetter) {
+    public int checkLetter(String selectedLetter) {
+        int multiply = 0;
         for(int i=0; i<word.length();i++){
             if (Character.toString(word.charAt(i)).equals(selectedLetter.toLowerCase())){
                 mask.set(i, true);
+                multiply++;
             }
         }
+        return multiply;
     }
 
     public String getMask() {
