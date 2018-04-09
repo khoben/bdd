@@ -1,6 +1,7 @@
 package com.khoben.bdd.tests;
 
 import com.khoben.bdd.model.Game;
+import com.khoben.bdd.view.ViewController;
 import cucumber.api.PendingException;
 import cucumber.api.java.ru.Дано;
 import cucumber.api.java.ru.Когда;
