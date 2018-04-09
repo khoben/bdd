@@ -72,4 +72,35 @@ public class MyStepsDef {
         System.out.println(arg1);
         ViewController.makeMessageBox(null, arg1, "Внимание",JOptionPane.WARNING_MESSAGE);
     }
+
+    /* -------------------------------------------------------------------------- */
+
+    @Дано("^\"([^\"]*)\" -- имя файла со словами$")
+    public void имя_файла_со_словами(String arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Когда("^игра загружена$")
+    public void игра_загружена() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Тогда("^слова из файла сохраняются в памяти$")
+    public void слова_из_файла_сохраняются_в_памяти() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Тогда("^первым словом в массиве слов будет$")
+    public void первым_словом_в_массиве_слов_будет(List<String> arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+        // E,K,V must be a scalar (String, Integer, Date, enum etc).
+        // Field names for YourType must match the column names in
+        // your feature file (except for spaces and capitalization).
+        throw new PendingException();
+    }
 }
