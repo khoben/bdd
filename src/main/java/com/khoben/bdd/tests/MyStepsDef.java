@@ -75,22 +75,27 @@ public class MyStepsDef {
 
     /* -------------------------------------------------------------------------- */
 
+    private String filename;
+
     @Дано("^\"([^\"]*)\" -- имя файла со словами$")
     public void имя_файла_со_словами(String arg1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        // throw new PendingException();
+        this.filename = arg1;
     }
 
     @Когда("^игра загружена$")
     public void игра_загружена() {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        //throw new PendingException();
+        this.game = new Game();
     }
 
     @Тогда("^слова из файла сохраняются в памяти$")
     public void слова_из_файла_сохраняются_в_памяти() {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        //throw new PendingException();
+        this.game.loadFromFile(this.filename);
     }
 
     @Тогда("^первым словом в массиве слов будет$")
@@ -101,6 +106,7 @@ public class MyStepsDef {
         // E,K,V must be a scalar (String, Integer, Date, enum etc).
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
-        throw new PendingException();
+//        throw new PendingException();
+        assertTrue(CollectionUtils.isEqualCollection(this.game.getRawWords()[0], arg1));
     }
 }
