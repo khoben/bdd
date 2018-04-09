@@ -117,6 +117,7 @@ public class Game {
     }
 
     public int makeTurn(String selectedLetter) {
-        return 3 * this.curWord.checkLetter(selectedLetter);
+        selectNewCost();
+        return curStepCost * this.curWord.checkLetter(selectedLetter);
     }
 }
