@@ -122,22 +122,19 @@ public class Game {
 
     public int makeTurn(String selectedLetter) {
         if (!this.curWord.getMask().contains("*")) {
-            ViewController.makeMessageBox(null, "Слово отгадано", "Успех", JOptionPane.WARNING_MESSAGE);
             return -1;
         }
-
-        selectNewCost();
         deleteFromAvLetters(selectedLetter);
 
         int score;
 
         if ((score = this.curWord.checkLetter(selectedLetter))==0){
-            ViewController.makeMessageBox(null, "Такой буквы здесь нет.", ":(", JOptionPane.WARNING_MESSAGE);
+            ViewController.makeMessageBox("Такой буквы здесь нет.", ":(", JOptionPane.WARNING_MESSAGE);
             return -1;
+        }else{
+            totalScore += curStepCost * score;
         }
-
-
-        totalScore += curStepCost * score;
+        selectNewCost();
         return totalScore;
     }
 
@@ -147,5 +144,17 @@ public class Game {
 
     public int getTotalScore(){
         return totalScore;
+    }
+
+    public Word getCurWord(){
+        return curWord;
+    }
+
+    public String getAvLettersPrintable(){
+        String ret = "";
+        for (String letter: avLetters) {
+            ret+=letter+",";
+        }
+        return ret.substring(0, ret.length()-1);
     }
 }

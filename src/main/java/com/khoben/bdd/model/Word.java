@@ -50,4 +50,12 @@ public class Word {
         }
         return printableMask.toString();
     }
+
+    public String getWord() {
+        return word;
+    }
+
+    public String getDescr() {
+        return descr;
+    }
 }
