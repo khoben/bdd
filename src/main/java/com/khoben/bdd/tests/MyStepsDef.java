@@ -171,24 +171,31 @@ public class MyStepsDef {
         // your feature file (except for spaces and capitalization).
 
 //        throw new PendingException();
+        this.curWord = new Word(arg1.get(0), arg1.get(1));
+        this.game.setCurWord(this.curWord);
     }
 
     @Когда("^выбрана буква \"([^\"]*)\"$")
     public void выбрана_буква(String arg1) {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
+        this._selectedLetter = arg1;
     }
 
     @Тогда("^пользователь получит очки$")
     public void пользователь_получит_очки() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
+        this.game.makeTurn(this._selectedLetter);
+
+        Assert.assertTrue(this.game.makeTurn(this._selectedLetter) > 0);
     }
 
     @Тогда("^крутится барабан$")
     public void крутится_барабан() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
+        this.game.selectNewCost();
     }
 
 }
