@@ -159,4 +159,36 @@ public class MyStepsDef {
         this.game.selectNewCost();
     }
 
+    /*-----------------------------------------*/
+
+    @Дано("^загадано некоторое слово$")
+    public void загадано_некоторое_слово(List<String> arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+        // E,K,V must be a scalar (String, Integer, Date, enum etc).
+        // Field names for YourType must match the column names in
+        // your feature file (except for spaces and capitalization).
+
+//        throw new PendingException();
+    }
+
+    @Когда("^выбрана буква \"([^\"]*)\"$")
+    public void выбрана_буква(String arg1) {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+    }
+
+    @Тогда("^пользователь получит очки$")
+    public void пользователь_получит_очки() {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+    }
+
+    @Тогда("^крутится барабан$")
+    public void крутится_барабан() {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+    }
+
 }
