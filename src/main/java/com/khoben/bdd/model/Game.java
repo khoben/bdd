@@ -69,4 +69,7 @@ public class Game {
     public List<Word> getWordObjects() {
         return words;
     }
+
+    public void next() {
+    }
 }
