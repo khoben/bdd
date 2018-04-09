@@ -121,4 +121,38 @@ public class MyStepsDef {
         this.game.loadWordObjects(); //т.к. загрузка из hashmap то порядок не сохраняется
         Assert.assertTrue(this.game.getWordObjects().contains(expected));
     }
+
+    /*----------------------------------------------*/
+    
+
+    @Дано("^загадано слово$")
+    public void загадано_слово(List<String> arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        // For automatic transformation, change DataTable to one of
+        // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+        // E,K,V must be a scalar (String, Integer, Date, enum etc).
+        // Field names for YourType must match the column names in
+        // your feature file (except for spaces and capitalization).
+//        throw new PendingException();
+
+    }
+
+    @Когда("^выбрана букву \"([^\"]*)\"$")
+    public void выбрана_букву(String arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Тогда("^маска слова будет \"([^\"]*)\"$")
+    public void маска_слова_будет(String arg1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Тогда("^крутится барабан \\(выбирается кол-во очков на текущий ход\\)$")
+    public void крутится_барабан_выбирается_кол_во_очков_на_текущий_ход() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
 }
