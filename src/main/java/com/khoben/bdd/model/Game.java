@@ -3,16 +3,38 @@ package com.khoben.bdd.model;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 public class Game {
     private List<String> avLetters;
     private HashMap<String, String> rawWords;
     private List<Word> words;
+    private int curStepCost;
+    private int totalScore;
+    private final List<Character> alphabet = "абвгдеёжзийклмнопрстуфхчцьыъэюя".chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+    private final List<Integer> scores = new ArrayList<>(){
+        {
+            add(10);
+            add(100);
+            add(300);
+            add(500);
+            add(1000);
+            add(2000);
+        }
+
+    };
+
+    public int generateRandomInt(int min, int max){
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
+    }
 
     public Game(){
         avLetters = new ArrayList<>();
         rawWords = new HashMap<>();
         words = new ArrayList<>();
+        totalScore = 0;
+        next();
     }
     public List<String> getAvLetters() {
         return avLetters;
@@ -71,5 +93,6 @@ public class Game {
     }
 
     public void next() {
+
     }
 }
