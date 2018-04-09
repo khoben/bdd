@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="600" maxWidth="800" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" fx:controller="com.khoben.bdd.view.ViewController" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="328.0" layoutY="30.0" text="ПОЛЕ ЧУДЕС">
             <font>
@@ -16,7 +16,7 @@
             </font>
         </Label>
         <ProgressBar layoutX="292.0" layoutY="74.0" prefWidth="200.0" progress="0.0" />
-        <Button id="makeTurn" layoutX="373.0" layoutY="520.0" mnemonicParsing="false" text="Назвать букву" />
+        <Button id="makeTurn" layoutX="373.0" layoutY="520.0" mnemonicParsing="false" text="Назвать букву" onAction="#onMakeTurnButtonClick" />
         <TextField id="selectedLetter" layoutX="392.0" layoutY="463.0" prefHeight="25.0" prefWidth="64.0" />
         <Label layoutX="330.0" layoutY="466.0" text="Буква:">
             <font>

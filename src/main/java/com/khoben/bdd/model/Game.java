@@ -140,4 +140,12 @@ public class Game {
         totalScore += curStepCost * score;
         return totalScore;
     }
+
+    public int getCurStepCost(){
+        return curStepCost;
+    }
+
+    public int getTotalScore(){
+        return totalScore;
+    }
 }
