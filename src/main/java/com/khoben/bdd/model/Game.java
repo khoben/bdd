@@ -56,4 +56,17 @@ public class Game {
     public HashMap<String,String> getRawWords() {
         return rawWords;
     }
+
+    public void loadWordObjects() {
+
+    }
+
+    public ArrayList<Word> getWordObjects() {
+        ArrayList<Word> ret = new ArrayList<>(){
+            {
+                add(new Word("вратарь", "Так в старину называли сторожа городских ворот"));
+            }
+        };
+        return ret;
+    }
 }
