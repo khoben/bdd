@@ -10,6 +10,7 @@ public class Game {
     private List<String> avLetters;
     private HashMap<String, String> rawWords;
     private List<Word> words;
+    private Word curWord;
     private int curStepCost;
     private int totalScore;
     private final List<Character> alphabet = "абвгдеёжзийклмнопрстуфхчцьыъэюя".chars().mapToObj(c -> (char) c).collect(Collectors.toList());
@@ -33,9 +34,24 @@ public class Game {
         avLetters = new ArrayList<>();
         rawWords = new HashMap<>();
         words = new ArrayList<>();
-        totalScore = 0;
-        next();
+        loadGame();
     }
+
+    public void loadGame(){
+        totalScore = 0;
+        setAvLetters(alphabet.stream().map(Object::toString)
+                .collect(Collectors.toList()));
+
+        loadFromFile("words.csv");
+        loadWordObjects();
+        selectCurWord();
+        selectNewCost();
+    }
+
+    private void selectCurWord() {
+        curWord = words.get(generateRandomInt(0, words.size() - 1));
+    }
+
     public List<String> getAvLetters() {
         return avLetters;
     }
@@ -92,7 +108,7 @@ public class Game {
         return words;
     }
 
-    public void next() {
+    public void selectNewCost() {
         curStepCost = scores.get(generateRandomInt(0, scores.size() - 1));
     }
 }

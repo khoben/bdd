@@ -3,7 +3,6 @@ package com.khoben.bdd.tests;
 import com.khoben.bdd.model.Game;
 import com.khoben.bdd.model.Word;
 import com.khoben.bdd.view.ViewController;
-import cucumber.api.PendingException;
 import cucumber.api.java.ru.Дано;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
@@ -157,7 +156,7 @@ public class MyStepsDef {
     @Тогда("^крутится барабан \\(выбирается кол-во очков на текущий ход\\)$")
     public void крутится_барабан_выбирается_кол_во_очков_на_текущий_ход() {
         // Write code here that turns the phrase above into concrete actions
-        this.game.next();
+        this.game.selectNewCost();
     }
 
 }
