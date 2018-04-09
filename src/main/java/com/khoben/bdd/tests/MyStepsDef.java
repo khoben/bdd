@@ -171,6 +171,7 @@ public class MyStepsDef {
         // your feature file (except for spaces and capitalization).
 
 //        throw new PendingException();
+        this.game = new Game();
         this.curWord = new Word(arg1.get(0), arg1.get(1));
         this.game.setCurWord(this.curWord);
     }
