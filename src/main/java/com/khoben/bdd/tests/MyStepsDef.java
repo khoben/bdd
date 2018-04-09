@@ -123,7 +123,8 @@ public class MyStepsDef {
     }
 
     /*----------------------------------------------*/
-    
+    private Word curWord;
+    private String _selectedLetter;
 
     @Дано("^загадано слово$")
     public void загадано_слово(List<String> arg1) {
@@ -134,25 +135,27 @@ public class MyStepsDef {
         // Field names for YourType must match the column names in
         // your feature file (except for spaces and capitalization).
 //        throw new PendingException();
-
+        this.curWord = new Word(arg1.get(0),arg1.get(1));
     }
 
     @Когда("^выбрана букву \"([^\"]*)\"$")
     public void выбрана_букву(String arg1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+//        throw new PendingException();
+        this._selectedLetter = arg1;
     }
 
     @Тогда("^маска слова будет \"([^\"]*)\"$")
     public void маска_слова_будет(String arg1) {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        this.curWord.checkLetter(this._selectedLetter);
+        Assert.assertTrue(this.curWord.getMask().equals(arg1));
     }
 
     @Тогда("^крутится барабан \\(выбирается кол-во очков на текущий ход\\)$")
     public void крутится_барабан_выбирается_кол_во_очков_на_текущий_ход() {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        this.game.next();
     }
 
 }
